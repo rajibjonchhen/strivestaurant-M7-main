@@ -15,10 +15,10 @@ function App() {
         <MyNavbar brand='Strivestaurant'/>
         <Routes>
           <Route path='/' element={<Home />} />
-          // <Route path='/profile' element={<h1>PROFILE PAGE</h1>} />
-          // <Route path='/reservations' element={<Booking />} />
-          // <Route path='/menu' element={<Menu />} />
-          // <Route path='/details/:pastaId' element={<Details />} />
+           <Route path='/profile' element={<h1>PROFILE PAGE</h1>} />
+           <Route path='/reservations' element={<Booking />} />
+           <Route path='/menu' element={<Menu />} />
+          <Route path='/details/:pastaId' element={<Details />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

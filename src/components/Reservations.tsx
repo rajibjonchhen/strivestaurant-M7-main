@@ -3,9 +3,10 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import Spinner from 'react-bootstrap/Spinner'
 import Alert from 'react-bootstrap/Alert'
 import { parseISO, format } from 'date-fns'
+import { IBooking } from '../types/IBooking'
 
 const Reservations = () => {
-  const [reservations, setReservations] = useState([])
+  const [reservations, setReservations] = useState<IBooking[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
 

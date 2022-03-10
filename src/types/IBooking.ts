@@ -3,5 +3,5 @@ export interface IBooking {
         numberOfPeople: number;
         name: string;
         author: string;
-        dateTime: Date;
+        dateTime: string;
     }

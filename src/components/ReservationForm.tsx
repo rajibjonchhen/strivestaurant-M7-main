@@ -2,24 +2,32 @@ import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const ReservationForm = () => {
-  const [reservation, setReservation] = useState({
+interface IReservation {
     name: '',
     phone: '',
     numberOfPeople: 1,
     smoking: false,
     dateTime: '',
-    specialRequests: '',
-  })
+    specialRequests: ''
+}
+const ReservationForm = () => {
+  const [reservation, setReservation] = useState<IReservation>({
+    name: '',
+    phone: '',
+    numberOfPeople: 1,
+    smoking: false,
+    dateTime: '',
+    specialRequests: ''
+})
 
-  const handleInput = (fieldName, value) => {
+  const handleInput = (fieldName:string, value:any) => {
     setReservation({
       ...reservation,
       [fieldName]: value,
     })
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e : FormDataEvent) => {
     e.preventDefault()
     console.log(reservation)
     try {
@@ -55,13 +63,13 @@ const ReservationForm = () => {
   return (
     <>
       <h2>Book your table NOW!</h2>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={() => handleSubmit}>
         <Form.Group>
           <Form.Label>Your name</Form.Label>
           <Form.Control
             type='text'
             placeholder='Input your name'
-            value={reservation.name}
+            value={reservation?.name}
             onChange={(e) => {
               handleInput('name', e.target.value)
             }}
@@ -73,7 +81,7 @@ const ReservationForm = () => {
           <Form.Control
             type='tel'
             placeholder='Input your cellphone'
-            value={reservation.phone}
+            value={reservation?.phone}
             onChange={(e) => {
               handleInput('phone', e.target.value)
             }}
@@ -84,7 +92,7 @@ const ReservationForm = () => {
           <Form.Label>How many people?</Form.Label>
           <Form.Control
             as='select'
-            value={reservation.numberOfPeople}
+            value={reservation?.numberOfPeople}
             onChange={(e) => {
               handleInput('numberOfPeople', e.target.value)
             }}
@@ -102,7 +110,7 @@ const ReservationForm = () => {
           <Form.Check
             type='checkbox'
             label='Do you smoke?'
-            checked={reservation.smoking}
+            checked={reservation?.smoking}
             onChange={(e) => {
               handleInput('smoking', e.target.checked)
             }}
@@ -112,7 +120,7 @@ const ReservationForm = () => {
           <Form.Label>Date?</Form.Label>
           <Form.Control
             type='datetime-local'
-            value={reservation.dateTime}
+            value={reservation?.dateTime}
             onChange={(e) => {
               handleInput('dateTime', e.target.value)
             }}
@@ -124,7 +132,7 @@ const ReservationForm = () => {
           <Form.Control
             as='textarea'
             rows={5}
-            value={reservation.specialRequests}
+            value={reservation?.specialRequests}
             onChange={(e) => {
               handleInput('specialRequests', e.target.value)
             }}

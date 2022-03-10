@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { Carousel, Container, Col, Row } from 'react-bootstrap'
 import items from '../data/menu.json'
+import { IPasta } from '../types/IPasta'
 import DishComments from './DishComments'
 
 const Home = () => {
-  const [selectedDish, setSelectedDish] = useState(undefined)
+  const [selectedDish, setSelectedDish] = useState<IPasta>()
 
   return (
     <Container>

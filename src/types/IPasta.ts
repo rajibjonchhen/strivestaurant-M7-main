@@ -1,3 +1,4 @@
+import { IComment } from "./IComment";
 
     export interface IPasta {
         id: number;
@@ -7,4 +8,5 @@
         label: string;
         price: string;
         description: string;
+        comments?:IComment[]
     }

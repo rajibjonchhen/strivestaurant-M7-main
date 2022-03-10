@@ -5,8 +5,9 @@ import DishComments from './DishComments'
 import { Col, Row, Container } from 'react-bootstrap'
 import { IPasta } from '../types/IPasta'
 
+type PastaType =IPasta|undefined
 const Details = () => {
-  const [pasta, setPasta] = useState<undefined|IPasta>()
+  const [pasta, setPasta] = useState<PastaType>(undefined)
 
   const params = useParams()
 

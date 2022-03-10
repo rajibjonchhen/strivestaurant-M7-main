@@ -5,7 +5,7 @@ import { IPasta } from '../types/IPasta'
 import DishComments from './DishComments'
 
 const Home = () => {
-  const [selectedDish, setSelectedDish] = useState<IPasta>()
+  const [selectedDish, setSelectedDish] = useState<IPasta|undefined>(undefined)
 
   return (
     <Container>
@@ -33,7 +33,7 @@ const Home = () => {
       </Row>
       <Row className='mt-3 justify-content-center'>
         <Col xs={12} md={6} className='text-center'>
-          <DishComments selectedDish={selectedDish} />
+         {selectedDish && <DishComments selectedDish={selectedDish} />}
         </Col>
       </Row>
     </Container>

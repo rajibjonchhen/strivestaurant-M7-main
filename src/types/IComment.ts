@@ -3,5 +3,5 @@ export interface IComment {
     rating: number;
     comment: string;
     author: string;
-    date: Date;
+    date: string;
 }

@@ -39,7 +39,7 @@ const Reservations = () => {
       <h2 className='mt-4'>BOOKED TABLES</h2>
       {isLoading && <Spinner animation='border' variant='info' />}
       {isError ? (
-        <Alert variant='danger'>Something went wrong :(</Alert>
+        <Alert variant='danger'>Something went wrong </Alert>
       ) : (
         <ListGroup className='mb-5'>
           {reservations.map((res) => (
